@@ -6,13 +6,20 @@ var addbuttontryme= function() {
 var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
 if (divtags.length == 0) { return false; }
 var divtag=divtags[0];
+var divtag1 = document.createElement("div");
+divtag1.setAttribute("ng-app", "started");
+var divtag2 = document.createElement("div");
+divtag2.setAttribute("ng-controller", "GoodController1");
 var newbtn = document.createElement("Button"); 
 newbtn.appendChild(document.createTextNode("Try me"));
 newbtn.setAttribute("id", "trymefashion");
-newbtn.setAttribute("onclick", "trymeclicked();");
+newbtn.setAttribute("ng-click", "takePicture()");
+newbtn.setAttribute("id", "trymefashion");
 newbtn.className="btn";
 newbtn.visible=true;
-divtag.appendChild(newbtn);
+divtag2.appendChild(newbtn);
+divtag1.appendChild(divtag2);
+divtag.appendChild(divtag1);
  
 };
 addbuttontryme();
