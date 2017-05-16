@@ -3,7 +3,7 @@ var loaderfn = function (pURL) {
   console.log(pURL);
 var script = document.createElement("script");
 script.src = pURL;
-script.defer = true;
+//script.defer = true;
 script.type = "text/javascript";
 document.head.appendChild(script);
 };
