@@ -15,7 +15,6 @@ newbtn.appendChild(document.createTextNode("Try me"));
 newbtn.setAttribute("id", "trymefashion");
 newbtn.setAttribute("ng-click", "takePicture()");
 newbtn.setAttribute("id", "trymefashion");
-newbtn.className="btn";
 newbtn.visible=true;
 divtag2.appendChild(newbtn);
 divtag1.appendChild(divtag2);
