@@ -14,7 +14,7 @@ loaderfn("https://octosystems.github.io/JS/jquery.dataTables.bootstrap.js");
 loaderfn("https://octosystems.github.io/JS/ionic.bundle.js"); 
 loaderfn("https://octosystems.github.io/JS/fabric.js");    
 loaderfn("https://octosystems.github.io/JS/ng-cordova.min.js");
-loaderfn("https://octosystems.github.io/JS/cordova.js");
+//loaderfn("https://octosystems.github.io/JS/cordova.js");
 loaderfn("https://octosystems.github.io/JS/imageapp.js");
 loaderfn("https://octosystems.github.io/JS/app.js");     
 loaderfn("https://octosystems.github.io/JS/Octopus.FashionApp.Shopify.js");
