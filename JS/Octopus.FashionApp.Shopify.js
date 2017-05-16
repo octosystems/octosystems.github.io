@@ -7,9 +7,9 @@ var divtags = document.getElementsByClassName("product-form__item product-form__
 if (divtags.length == 0) { return false; }
 var divtag=divtags[0];
 var divtag1 = document.createElement("div");
-divtag1.setAttribute("ng-app", "started");
+divtag1.setAttribute("ng-app", "starter");
 var divtag2 = document.createElement("div");
-divtag2.setAttribute("ng-controller", "GoodController1");
+divtag2.setAttribute("ng-controller", "ExampleController");
 var newbtn = document.createElement("Button"); 
 newbtn.appendChild(document.createTextNode("Try me"));
 newbtn.setAttribute("id", "trymefashion");
