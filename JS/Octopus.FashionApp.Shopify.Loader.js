@@ -1,8 +1,20 @@
-var loaderfn = function () {
+
+var loaderfn = function (pURL) {
 var script = document.createElement("script");
-script.src = "https://firebasestorage.googleapis.com/v0/b/testhttps-38fa0.appspot.com/o/Octopus.FashionApp.Shopify.js?alt=media&token=e973b7eb-eda6-494c-b320-ded541a4f595";
+script.src = pURL;
 script.defer = true;
 script.type = "text/javascript";
 document.head.appendChild(script);
 };
-loaderfn();
+loaderfn("https://octosystems.github.io/JS/jquery-1.10.2.min.js");
+loaderfn("https://octosystems.github.io/JS/jquery.expander.min.js");
+loaderfn("https://octosystems.github.io/JS/jquery.dataTables.min.js");
+loaderfn("https://octosystems.github.io/JS/bootstrap.min.js");
+loaderfn("https://octosystems.github.io/JS/jquery.dataTables.bootstrap.js");
+loaderfn("https://octosystems.github.io/JS/ionic.bundle.js"); 
+loaderfn("https://octosystems.github.io/JS/fabric.js");    
+loaderfn("https://octosystems.github.io/JS/ng-cordova.min.js");
+loaderfn("https://octosystems.github.io/JS/cordova.js");
+loaderfn("https://octosystems.github.io/JS/imageapp.js");
+loaderfn("https://octosystems.github.io/JS/app.js");     
+loaderfn("https://octosystems.github.io/JS/Octopus.FashionApp.Shopify.js");
