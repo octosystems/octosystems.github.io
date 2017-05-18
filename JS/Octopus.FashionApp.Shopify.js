@@ -123,6 +123,8 @@ var trymeclicked=function() {
    alert("Try me clicked");
 }
 
+var octImagelocation = "https://octosystems.github.io/images/";
+
 var addbuttontryme= function() {
 var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
 if (divtags.length == 0) { return false; }
@@ -175,6 +177,7 @@ var span = document.getElementsByClassName("fsnclose")[0];
 btn.onclick = function() {
     window.modal_on = true;
     modal.style.display = "block";
+    return false;
 };
 
 // When the user clicks on <span> (x), close the modal
@@ -322,7 +325,7 @@ function getDetectionFlags()
 	if (type == consts.BETAFACE_FEATURE_PRO_CHIN_EARCONN_L || type == consts.BETAFACE_FEATURE_PRO_CHIN_EARCONN_R ) {
 	    x = offsetX + scale * parseFloat($(pts[k]).children("x").text());
 	    y = offsetY + scale * parseFloat($(pts[k]).children("y").text());
-	    drawImageOnFace("http://theclubsap.octosystems.com:81/Images/AdjustedEarring.png", 
+	    drawImageOnFace(octImagelocation + "AdjustedEarring.png", 
 		canvas, -1, 0, x, y);                    
 	    pt_found++;
 	    if (pt_found == 2) {
@@ -333,7 +336,7 @@ function getDetectionFlags()
 }                                                                    
 
 function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) { 
-    drawImageOnFace("http://theclubsap.octosystems.com:81/Images/AdjustedNecklace.png", 
+    drawImageOnFace(octImagelocation + "AdjustedNecklace.png", 
 	  canvas, w, h,x,y);      
 }
 
