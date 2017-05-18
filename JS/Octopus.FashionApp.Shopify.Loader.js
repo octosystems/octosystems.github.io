@@ -26,7 +26,7 @@ document.getElementsByTagName("head")[0].appendChild(csslink);
    // An array of scripts you want to load in order
    var scriptLibrary = [];
    var mBaseLocation = "file:///C:/Development/octosystems.github.io/octosystems.github.io/octosystems.github.io";
-   if (window.location.href.indexOf("testjs") !== -1) {
+   if (window.location.href.indexOf("testjs") === -1) {
        mBaseLocation = "https://octosystems.github.io";
    }   
    loadcss(mBaseLocation + "/CSS/modalwindow.css");
