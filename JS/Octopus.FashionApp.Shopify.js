@@ -149,7 +149,7 @@ divtag1.setAttribute("ng-app", "starter");
 var divtag2 = document.createElement("div");
 divtag2.setAttribute("ng-controller", "ExampleController");
 
-var newbtn = document.createElement("Button"); 
+var newbtn = document.createElement("a"); 
 newbtn.appendChild(document.createTextNode("Try me"));
 newbtn.setAttribute("id", "trymefashion");
 newbtn.visible=true;
