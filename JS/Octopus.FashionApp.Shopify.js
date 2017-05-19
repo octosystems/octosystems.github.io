@@ -124,7 +124,7 @@ var divtags = document.getElementsByClassName("product-form__item product-form__
 if (divtags.length == 0) { return false; }
 
 console.log(meta.product.id);
-var octProduct;
+var octProduct = {};
 $.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
   octProduct = result; 
 } );
@@ -343,6 +343,8 @@ function getDetectionFlags()
 
 function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) { 
     drawImageOnFace(octImagelocation + "AdjustedNecklace.png", 
+	  canvas, w, h,x,y);      
+    drawImageOnFace(octProduct., 
 	  canvas, w, h,x,y);      
 }
 
