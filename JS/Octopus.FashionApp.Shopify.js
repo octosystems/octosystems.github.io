@@ -181,9 +181,17 @@ var getProduct = function () {
 	window.octProduct = {};
 	$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
 	window.octProduct = result; 
-	if (result.product.tags.indexOf("necklace") !== -1) {
-		addbuttontryme();
-		assignFileSelect();
+	if (result.product.tags.indexOf("trialnecklace") !== -1 || 
+	    result.product.tags.indexOf("trialearring") !== -1) {
+	        if (result.product.images.length > 0 ) {
+		    for (i = 0;i<result.product.images.length; i++) {
+			if (result.product.images[i].src.indexOf("_fortrial") !== -1) {
+				addbuttontryme();
+				assignFileSelect();
+				break;			    
+			}
+		    }
+		}
 	}	
 	} ); 
 	};
