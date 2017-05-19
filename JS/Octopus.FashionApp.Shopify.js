@@ -150,6 +150,7 @@ var addbuttontryme= function() {
 	var newbtn = document.createElement("a"); 
 	newbtn.appendChild(document.createTextNode("Try me"));
 	newbtn.setAttribute("id", "trymefashion");
+	newbtn.setAttribute("href", "javascript:void(0)");
 	newbtn.visible=true;
 	divtag.appendChild(newbtn);
 
