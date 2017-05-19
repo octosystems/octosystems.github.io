@@ -119,15 +119,12 @@ var consts = {
 };
 
 var octImagelocation = "https://octosystems.github.io/images/";
+
 var addbuttontryme= function() {
 var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
 if (divtags.length == 0) { return false; }
 
-console.log(meta.product.id);
-window.octProduct = {};
-$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
-  window.octProduct = result; 
-} );
+
 
 var modaldiv = document.createElement("div");
 var htmlstring = '<!-- Trigger/Open The Modal -->' +
@@ -163,7 +160,18 @@ divtag.appendChild(newbtn);
 document.body.appendChild(divtag1);
 
 };
-addbuttontryme();
+
+var getProduct = function () {
+console.log(meta.product.id);
+window.octProduct = {};
+$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
+  window.octProduct = result; 
+  if (result.tags.indexOf("necklace") !== -1) {
+	addbuttontryme();
+  }	
+} ); };
+getProduct();
+
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -204,11 +212,11 @@ span.onclick = function() {
     }
 })();
 
-(function() {
+/* (function() {
             $(window).resize(function() {
                 updateModal();
             });
-})();
+})(); */
 
 function serviceUri()
 {
