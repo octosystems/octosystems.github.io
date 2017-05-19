@@ -124,9 +124,9 @@ var divtags = document.getElementsByClassName("product-form__item product-form__
 if (divtags.length == 0) { return false; }
 
 console.log(meta.product.id);
-var octProduct = {};
+window.octProduct = {};
 $.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
-  octProduct = result; 
+  window.octProduct = result; 
 } );
 
 var modaldiv = document.createElement("div");
