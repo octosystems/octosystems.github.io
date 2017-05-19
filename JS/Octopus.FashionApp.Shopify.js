@@ -183,6 +183,7 @@ var getProduct = function () {
 	window.octProduct = result; 
 	if (result.product.tags.indexOf("necklace") !== -1) {
 		addbuttontryme();
+		assignFileSelect();
 	}	
 	} ); 
 	};
@@ -190,7 +191,7 @@ getProduct();
 
 
 
-(function () {
+function assignFileSelect() {
     var takePicture = document.querySelector("#myImage"),
         showPicture = document.querySelector("#fsnPhoto");
 
@@ -206,7 +207,7 @@ getProduct();
             }
         };
     }
-})();
+}
 
 /* (function() {
             $(window).resize(function() {
