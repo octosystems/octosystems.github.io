@@ -126,7 +126,7 @@ if (divtags.length == 0) { return false; }
 console.log(meta.product.id);
 var octProduct;
 $.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
-  octProduct = JSON.parse(result); 
+  octProduct = result; 
 } );
 
 var modaldiv = document.createElement("div");
