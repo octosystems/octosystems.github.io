@@ -121,79 +121,75 @@ var consts = {
 var octImagelocation = "https://octosystems.github.io/images/";
 
 var addbuttontryme= function() {
-var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
-if (divtags.length == 0) { return false; }
+	var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
+	if (divtags.length == 0) { return false; }
 
+	var modaldiv = document.createElement("div");
+	var htmlstring = '<!-- Trigger/Open The Modal -->' +
+	'<!-- The Modal -->'+
+	'<div id="myModal" class="fsnmodal">'+
+	'  <!-- Modal content -->'+
+	'  <div class="fsnmodal-content">'+
+	'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
+	'    <input type="file" id="myImage" accept="image/*"/>' +
+	'    <span id="octStatus" style="display:none" ></span>' +
+	'    <img src="about:blank" alt="" id="fsnPhoto" style="width:100%;height:auto; display:none" ></img></div>'+
+	'    <div id="canvasContainer" /></div>'+
+	  '</div>'+
 
+	'</div>';
+	modaldiv.innerHTML = htmlstring;
+	document.body.append(modaldiv);
 
-var modaldiv = document.createElement("div");
-var htmlstring = '<!-- Trigger/Open The Modal -->' +
-'<!-- The Modal -->'+
-'<div id="myModal" class="fsnmodal">'+
-'  <!-- Modal content -->'+
-'  <div class="fsnmodal-content">'+
-'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
-'    <input type="file" id="myImage" accept="image/*"/>' +
-'    <span id="octStatus" style="display:none" ></span>' +
-'    <img src="about:blank" alt="" id="fsnPhoto" style="width:100%;height:auto; display:none" ></img></div>'+
-'    <div id="canvasContainer" /></div>'+
-  '</div>'+
+	var divtag=divtags[0];
+	var divtag1 = document.createElement("div");
+	divtag1.setAttribute("ng-app", "starter");
+	var divtag2 = document.createElement("div");
+	divtag2.setAttribute("ng-controller", "ExampleController");
 
-'</div>';
-modaldiv.innerHTML = htmlstring;
-document.body.append(modaldiv);
+	var newbtn = document.createElement("a"); 
+	newbtn.appendChild(document.createTextNode("Try me"));
+	newbtn.setAttribute("id", "trymefashion");
+	newbtn.visible=true;
+	divtag.appendChild(newbtn);
 
-var divtag=divtags[0];
-var divtag1 = document.createElement("div");
-divtag1.setAttribute("ng-app", "starter");
-var divtag2 = document.createElement("div");
-divtag2.setAttribute("ng-controller", "ExampleController");
-
-var newbtn = document.createElement("a"); 
-newbtn.appendChild(document.createTextNode("Try me"));
-newbtn.setAttribute("id", "trymefashion");
-newbtn.visible=true;
-divtag.appendChild(newbtn);
-
-// divtag2.appendChild(newbtn);
-// divtag1.appendChild(divtag2);
-document.body.appendChild(divtag1);
-
+	// divtag2.appendChild(newbtn);
+	// divtag1.appendChild(divtag2);
+	document.body.appendChild(divtag1);
+	// Get the modal
+	var modal = document.getElementById('myModal');
+	// Get the button that opens the modal
+	var btn = document.getElementById("trymefashion");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("fsnclose")[0];
+	// When the user clicks on the button, open the modal 
+	btn.onclick = function() {
+	    window.modal_on = true;
+	    modal.style.display = "block";
+	    return false;
+	};
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	    window.modal_on = false;
+	    modal.style.display = "none";
+	};
+	
 };
 
 var getProduct = function () {
-console.log(meta.product.id);
-window.octProduct = {};
-$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
-  window.octProduct = result; 
-  if (result.tags.indexOf("necklace") !== -1) {
-	addbuttontryme();
-  }	
-} ); };
+	console.log(meta.product.id);
+	window.octProduct = {};
+	$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
+	window.octProduct = result; 
+	if (result.product.tags.indexOf("necklace") !== -1) {
+		addbuttontryme();
+	}	
+	} ); 
+	};
 getProduct();
 
 
-// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("trymefashion");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("fsnclose")[0];
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    window.modal_on = true;
-    modal.style.display = "block";
-    return false;
-};
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    window.modal_on = false;
-    modal.style.display = "none";
-};
 (function () {
     var takePicture = document.querySelector("#myImage"),
         showPicture = document.querySelector("#fsnPhoto");
