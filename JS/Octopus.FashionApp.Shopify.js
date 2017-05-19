@@ -137,7 +137,8 @@ var htmlstring = '<!-- Trigger/Open The Modal -->' +
 '  <div class="fsnmodal-content">'+
 '    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
 '    <input type="file" id="myImage" accept="image/*"/>' +
-'    <img src="about:blank" alt="" id="fsnPhoto" style="width:100%;height:auto; display:none" /></div>'+
+'    <span id="octStatus" style="display:none" ></span>' +
+'    <img src="about:blank" alt="" id="fsnPhoto" style="width:100%;height:auto; display:none" ></img></div>'+
 '    <div id="canvasContainer" /></div>'+
   '</div>'+
 
@@ -230,8 +231,13 @@ function loadFile(file, img) {
 	    return function(e) {
 		if (reader.readyState == FileReader.DONE) {
 		    var data_url = e.target.result;
-		    //img.src = data_url;
+		    img.src = data_url;
+		    img.style.display = "block";
 		    var detection_flags = getDetectionFlags();
+		    $("#octStatus").text("Please wait.. Processing the image");
+		     $("#octStatus").css("display", "block");
+		     deleteCanvascontent();
+		    //img.style.display = "block";
 		    uploadImageFile(theFile.name, data_url, detection_flags);
 		}
 
@@ -453,7 +459,12 @@ function getObjPosition(e) {
     };
 }
 
-
+function deleteCanvascontent() {
+	var _con = $("#canvasContainer");
+	while (_con[0].firstChild) {
+	    _con[0].removeChild(_con[0].firstChild);
+	}
+}
 function updateModal() {
     if (window.modal_on) {
 	var _con = $("#canvasContainer");
@@ -551,6 +562,10 @@ function updateModal() {
 		}
 		img.sendToBack();
 		canvas.renderAll();
+		$("#octStatus").css("display", "none");
+		$("#fsnPhoto").css("display", "none");
+		$("#octStatus").text("");
+		
 	    });
 	}
     }
@@ -614,10 +629,12 @@ function parseImageInfo(image_uid, xmlDocRoot) {
     if ($(xmlDoc).children("FaceInfo") && $(xmlDoc).children("FaceInfo").length ) {
        if ($(xmlDoc).children("FaceInfo").length == 0) {
           console.log("parseimageinfo faceinfo length 0 ");
+	  $("#octStatus").text("No faces found");
        }
        
     } else {
        console.log("parseimageinfo no faceinfo found");
+       $("#octStatus").text("No faces found");
     }
     var idx = 0;
     $(xmlDoc).children("FaceInfo").each(function() {
@@ -832,6 +849,7 @@ function addImage(image_uid, filename, image_data) {
 	    window.Images[i].faces = 0;
 	    window.Images[i].status = 'uploaded';
 	    bfound = true;
+	    getImageInfo(image_uid);
 	    break;
 	}
     }
