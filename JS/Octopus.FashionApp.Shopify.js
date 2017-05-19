@@ -124,7 +124,7 @@ var trymeclicked=function() {
 }
 
 var octImagelocation = "https://octosystems.github.io/images/";
-
+console.log(meta.product.id);
 var addbuttontryme= function() {
 var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
 if (divtags.length == 0) { return false; }
