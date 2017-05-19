@@ -335,10 +335,10 @@ function getDetectionFlags()
 }
 
  function isproductearring() {
-	return (octProduct.product.tags.indexOf("trialearring") );
+	return (octProduct.product.tags.indexOf("trialearring") !== -1);
  }
  function isproductnecklace() {
-	return (octProduct.product.tags.indexOf("trialnecklace") );
+	return (octProduct.product.tags.indexOf("trialnecklace") !== -1);
  }
  
  function drawEarRingsOnFace(canvas, scale, offsetX, offsetY, pts) {
