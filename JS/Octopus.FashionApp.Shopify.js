@@ -131,7 +131,8 @@ var addbuttontryme= function() {
 	'  <!-- Modal content -->'+
 	'  <div class="fsnmodal-content">'+
 	'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
-	'    <input type="file" id="myImage" accept="image/*"/>' +
+	'    <label> Choose image...>' + 
+	'    <input type="file" id="myImage" accept="image/*" style="top:-1000px;position:fixed"/></label>' +
 	'    <span id="octStatus" style="display:none" ></span>' +
 	'    <img src="about:blank" alt="" id="fsnPhoto" style="width:100%;height:auto; display:none" ></img></div>'+
 	'    <div id="canvasContainer" /></div>'+
