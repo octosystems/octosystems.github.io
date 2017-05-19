@@ -181,8 +181,7 @@ var getProduct = function () {
 	window.octProduct = {};
 	$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
 	window.octProduct = result; 
-	if (result.product.tags.indexOf("trialnecklace") !== -1 || 
-	    result.product.tags.indexOf("trialearring") !== -1) {
+	if (isproductnecklace() ||  isproductearring() ) {
 	        if (result.product.images.length > 0 ) {
 		    for (i = 0;i<result.product.images.length; i++) {
 			if (result.product.images[i].src.indexOf("_fortrial") !== -1) {
@@ -335,17 +334,32 @@ function getDetectionFlags()
    return res;
 }
 
+ function isproductearring() {
+	return (octProduct.product.tags.indexOf("trialearring") );
+ }
+ function isproductnecklace() {
+	return (octProduct.product.tags.indexOf("trialnecklace") );
+ }
+ 
  function drawEarRingsOnFace(canvas, scale, offsetX, offsetY, pts) {
+    if (!isproductearring()) return;
     var pt_found = 0;
     var x = 0.0,
 	y = 0.0;
+    var imageurl = "";
+    for (i = 0;i<window.octProduct.product.images.length; i++) {
+	if (window.octProduct.product.images[i].src.indexOf("_fortrial") !== -1) {
+		imageurl = window.octProduct.product.images[i].src;
+		break;			    
+		}
+	}  
+    if (imageurl === "") return;
     for (var k = 0; k < pts.length; k++) {
 	var type = parseInt($(pts[k]).children("type").text());
 	if (type == consts.BETAFACE_FEATURE_PRO_CHIN_EARCONN_L || type == consts.BETAFACE_FEATURE_PRO_CHIN_EARCONN_R ) {
 	    x = offsetX + scale * parseFloat($(pts[k]).children("x").text());
 	    y = offsetY + scale * parseFloat($(pts[k]).children("y").text());
-	    drawImageOnFace(octImagelocation + "AdjustedEarring.png", 
-		canvas, -1, 0, x, y);                    
+	    drawImageOnFace(imageurl, canvas, -1, 0, x, y);                    
 	    pt_found++;
 	    if (pt_found == 2) {
 	      break;
@@ -358,6 +372,7 @@ function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) {
 /*     drawImageOnFace(octImagelocation + "AdjustedNecklace.png", 
 	  canvas, w, h,x,y); 
 	  */
+	if (!isproductnecklace()) return;  
     for (i = 0;i<window.octProduct.product.images.length; i++) {
 	if (window.octProduct.product.images[i].src.indexOf("_fortrial") !== -1) {
 		drawImageOnFace(window.octProduct.product.images[i].src, 
@@ -899,53 +914,30 @@ function doAddImage(image_uid, image_filename, image_data) {
 }
 
 
-        function doUpdateFace(face_uid, face_image_data, x, y, width, height, angle, points, tags) {
-            setTimeout(function() {
-                updateFace(face_uid, face_image_data, x, y, width, height, angle, points, tags);
-            }, 200);
-        }
+function doUpdateFace(face_uid, face_image_data, x, y, width, height, angle, points, tags) {
+    setTimeout(function() {
+	updateFace(face_uid, face_image_data, x, y, width, height, angle, points, tags);
+    }, 200);
+}
 
 
-	function updateFace(face_uid, face_image_data, x, y, width, height, angle, points, tags) {
-	    console.log("UpdateFace called " +face_uid);
-            var update_faces = false;
-            for (var i = window.Faces.length - 1; i > -1; i--) {
-                if (window.Faces[i].id === face_uid) {
-                    window.Faces[i].data = face_image_data;
-                    window.Faces[i].cropped_x = x;
-                    window.Faces[i].cropped_y = y;
-                    window.Faces[i].cropped_width = width;
-                    window.Faces[i].cropped_height = height;
-                    window.Faces[i].cropped_angle = angle;
-                    window.Faces[i].cropped_points = points;
-                    update_faces = true;
-                    break;
-                }
-            }
-	    console.log("Calling updatemodal from updateFace function " +face_uid);
-		updateModal();		
+function updateFace(face_uid, face_image_data, x, y, width, height, angle, points, tags) {
+    console.log("UpdateFace called " +face_uid);
+    var update_faces = false;
+    for (var i = window.Faces.length - 1; i > -1; i--) {
+	if (window.Faces[i].id === face_uid) {
+	    window.Faces[i].data = face_image_data;
+	    window.Faces[i].cropped_x = x;
+	    window.Faces[i].cropped_y = y;
+	    window.Faces[i].cropped_width = width;
+	    window.Faces[i].cropped_height = height;
+	    window.Faces[i].cropped_angle = angle;
+	    window.Faces[i].cropped_points = points;
+	    update_faces = true;
+	    break;
+	}
+    }
+    console.log("Calling updatemodal from updateFace function " +face_uid);
+	updateModal();		
 
-            /* var update_matches = false;
-            for (var i = window.Matches.length - 1; i > -1; i--) {
-                if (window.Matches[i].face_uid === face_uid) {
-                    window.Matches[i].data = face_image_data;
-                    update_matches = true;
-                }
-                if(window.Matches[i].matches != null){
-                for (var j = 0; j < window.Matches[i].matches.length; j++) {
-                    if (window.Matches[i].matches[j].face_uid === face_uid) {
-                        window.Matches[i].matches[j].data = face_image_data;
-                        window.Matches[i].matches[j].tags = tags;
-                        update_matches = true;
-                    }
-                }
-                }
-            } */
-
-            /* if (update_faces) {
-                updateFaces();
-            }
-            if (update_matches) {
-                updateMatches();
-            }*/
-        } 
+} 
