@@ -344,8 +344,7 @@ function getDetectionFlags()
 function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) { 
     drawImageOnFace(octImagelocation + "AdjustedNecklace.png", 
 	  canvas, w, h,x,y);      
-    drawImageOnFace(octProduct., 
-	  canvas, w, h,x,y);      
+    
 }
 
 function drawFace(canvas, scale, offsetX, offsetY, face, iscropped) {
