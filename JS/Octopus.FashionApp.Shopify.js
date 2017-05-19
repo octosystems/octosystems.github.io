@@ -342,9 +342,10 @@ function getDetectionFlags()
 }                                                                    
 
 function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) { 
-    drawImageOnFace(octImagelocation + "AdjustedNecklace.png", 
-	  canvas, w, h,x,y);      
-    
+/*     drawImageOnFace(octImagelocation + "AdjustedNecklace.png", 
+	  canvas, w, h,x,y);       */
+    drawImageOnFace(window.octProduct.product.images[0].src, 
+          canvas, w, h,x,y);      
 }
 
 function drawFace(canvas, scale, offsetX, offsetY, face, iscropped) {
