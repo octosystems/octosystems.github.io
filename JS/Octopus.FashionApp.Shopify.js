@@ -118,16 +118,16 @@ var consts = {
     BETAFACE_FEATURE_PRO_MOUTH_I_TL: 6619136
 };
 
-	
-var trymeclicked=function() {
-   alert("Try me clicked");
-}
-
 var octImagelocation = "https://octosystems.github.io/images/";
-console.log(meta.product.id);
 var addbuttontryme= function() {
 var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
 if (divtags.length == 0) { return false; }
+
+console.log(meta.product.id);
+var octProduct;
+$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
+  octProduct = JSON.parse(result);
+}
 
 var modaldiv = document.createElement("div");
 var htmlstring = '<!-- Trigger/Open The Modal -->' +
