@@ -1,4 +1,4 @@
-var constants = {
+constants = {
             'api_key': 'd45fd466-51e2-4701-8da8-04351c872236',
             'api_secret': '171e8465-f548-401d-b63b-caf0dc28df5f',
 	    'shopify_key' : '3f4995e5b8621d60cc7fba8d6951a327',
@@ -599,7 +599,8 @@ function updateModal() {
 		canvas.add(img);
 		for (var i = 0; i < window.Faces.length; i++) {
 		    if (window.Faces[i].image_uid === window.modal_id) {
-			drawFace(canvas, scale, offsetX, offsetY, window.Faces[i], false);
+			//drawFace(canvas, scale, offsetX, offsetY, window.Faces[i], false);
+			drawFace(canvas, scale, offsetX, 0, window.Faces[i], false);
 		    }
 		}
 		img.sendToBack();
