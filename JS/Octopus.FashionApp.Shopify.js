@@ -1,6 +1,8 @@
 var constants = {
             'api_key': 'd45fd466-51e2-4701-8da8-04351c872236',
             'api_secret': '171e8465-f548-401d-b63b-caf0dc28df5f'
+	    'shopify_key' : '3f4995e5b8621d60cc7fba8d6951a327',
+	    'shopify_password' : '289f0e2aaf1c839879c32cbde7f0812c'
         }
 	
 window.Images = [];
@@ -178,10 +180,7 @@ var addbuttontryme= function() {
 	
 };
 
-var getProduct = function () {
-	console.log(meta.product.id);
-	window.octProduct = {};
-	$.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
+var getproductcallback  =  function(result) {
 	window.octProduct = result; 
 	if (isproductnecklace() ||  isproductearring() ) {
 	        if (result.product.images.length > 0 ) {
@@ -194,7 +193,32 @@ var getProduct = function () {
 		    }
 		}
 	}	
-	} ); 
+	};
+
+var getProduct = function () {
+	console.log(meta.product.id);
+	window.octProduct = {};
+	var authstring = "Basic " + atob(constants.shopify_key + ":" + constants.shoipfy_password);
+	$.ajax({
+		headers: {"Authorization": + authstring },
+		  url: ("/admin/products/" + meta.product.id +".json",
+		  dataType: 'json',
+		  success: getproductcallback
+		});
+	/* $.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
+	window.octProduct = result; 
+	if (isproductnecklace() ||  isproductearring() ) {
+	        if (result.product.images.length > 0 ) {
+		    for (i = 0;i<result.product.images.length; i++) {
+			if (result.product.images[i].src.indexOf("_fortrial") !== -1) {
+				addbuttontryme();
+				assignFileSelect();
+				break;			    
+			}
+		    }
+		}
+	}	
+	} ); */ 
 	};
 getProduct();
 
@@ -377,8 +401,11 @@ function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) {
 	if (!isproductnecklace()) return;  
     for (i = 0;i<window.octProduct.product.images.length; i++) {
 	if (window.octProduct.product.images[i].src.indexOf("_fortrial") !== -1) {
+		
 		drawImageOnFace(window.octProduct.product.images[i].src, 
-			canvas, w, h,x,y);
+			canvas, face.cropped_width, face.cropped_height,
+			face.cropped_x, face.cropped_y);
+			
 		break;			    
 		}
 	}  
