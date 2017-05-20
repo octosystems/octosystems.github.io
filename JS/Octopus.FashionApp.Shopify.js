@@ -201,7 +201,7 @@ var getProduct = function () {
 	var authstring = "Basic " + atob(constants.shopify_key + ":" + constants.shoipfy_password);
 	$.ajax({
 		headers: {"Authorization": + authstring },
-		  url: ("/admin/products/" + meta.product.id +".json",
+		  url: "/admin/products/" + meta.product.id +".json",
 		  dataType: 'json',
 		  success: getproductcallback
 		});
