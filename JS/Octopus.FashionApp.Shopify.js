@@ -594,7 +594,8 @@ function updateModal() {
 		var offsetY = Math.max((canvas.height - img.height * scale) / 2.0, 0);
 		img.scale(scale);
 		img.left = offsetX;
-		img.top = offsetY;
+		//img.top = offsetY;
+		img.top = 0;
 		img.evented = false;
 		canvas.add(img);
 		for (var i = 0; i < window.Faces.length; i++) {
@@ -602,8 +603,7 @@ function updateModal() {
 			//drawFace(canvas, scale, offsetX, offsetY, window.Faces[i], false);
 			drawFace(canvas, scale, offsetX, 0, window.Faces[i], false);
 		    }
-		}
-		img.sendToBack();
+		}img.sendToBack();
 		canvas.renderAll();
 	    });
        } else if (window.modal_is_transform) {
