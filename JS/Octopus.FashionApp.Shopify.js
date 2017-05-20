@@ -199,6 +199,12 @@ var getProduct = function () {
 	console.log(meta.product.id);
 	window.octProduct = {};
 	var authstring = "Basic " + btoa(constants.shopify_key + ":" + constants.shopify_password);
+	var ajaxreq = {
+		headers: {"Authorization": + authstring },
+		  url: "/admin/products/" + meta.product.id +".json",
+		  dataType: 'json',
+		  success: getproductcallback
+		};
 	$.ajax({
 		headers: {"Authorization": + authstring },
 		  url: "/admin/products/" + meta.product.id +".json",
