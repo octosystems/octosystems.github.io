@@ -200,13 +200,13 @@ var getProduct = function () {
 	window.octProduct = {};
 	var authstring = "Basic " + btoa(constants.shopify_key + ":" + constants.shopify_password);
 	var ajaxreq = {
-		headers: {"Authorization": + authstring },
+		headers: {"Authorization":  authstring },
 		  url: "/admin/products/" + meta.product.id +".json",
 		  dataType: 'json',
 		  success: getproductcallback
 		};
 	$.ajax({
-		headers: {"Authorization": + authstring },
+		headers: {"Authorization" :  authstring },
 		  url: "/admin/products/" + meta.product.id +".json",
 		  dataType: 'json',
 		  success: getproductcallback
