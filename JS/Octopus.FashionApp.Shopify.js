@@ -198,7 +198,7 @@ var getproductcallback  =  function(result) {
 var getProduct = function () {
 	console.log(meta.product.id);
 	window.octProduct = {};
-	var authstring = "Basic " + btoa(constants.shopify_key + ":" + constants.shopify_password);
+	/* var authstring = "Basic " + btoa(constants.shopify_key + ":" + constants.shopify_password);
 	var ajaxreq = {
 		headers: {"Authorization":  authstring },
 		  url: "/admin/products/" + meta.product.id +".json",
@@ -211,20 +211,9 @@ var getProduct = function () {
 		  dataType: 'json',
 		  success: getproductcallback
 		});
-	/* $.getJSON("/admin/products/" + meta.product.id +".json", function(result) {
-	window.octProduct = result; 
-	if (isproductnecklace() ||  isproductearring() ) {
-	        if (result.product.images.length > 0 ) {
-		    for (i = 0;i<result.product.images.length; i++) {
-			if (result.product.images[i].src.indexOf("_fortrial") !== -1) {
-				addbuttontryme();
-				assignFileSelect();
-				break;			    
-			}
-		    }
-		}
-	}	
-	} ); */ 
+	*/	
+	var producturl = constants.shopify_key + ":" + constants.shopify_password + "@https://octosystems.shopify.com/admin/products/" + meta.product.id +".json";
+	$.getJSON(producturl,  getproductcallback); 
 	};
 getProduct();
 
