@@ -398,7 +398,7 @@ function drawNecklaceOnFace(canvas, w, h,x,y, face, iscropped) {
 	if (window.octProduct.product.images[i].src.indexOf("_fortrial") !== -1) {
 		
 		drawImageOnFace(window.octProduct.product.images[i].src, 
-			canvas,  canvas, w, h,x,y);
+			canvas,  w, h,x,y);
 			
 		break;			    
 		}
