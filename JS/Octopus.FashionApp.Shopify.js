@@ -627,7 +627,8 @@ function updateModal() {
 	    fabric.Image.fromURL(findFaceImage(window.modal_id), function(img) {
 		var scale = Math.min(canvas.width / img.width, canvas.height / img.height);
 		var offsetX = Math.max((canvas.width - img.width * scale) / 2.0, 0);
-		var offsetY = Math.max((canvas.height - img.height * scale) / 2.0, 0);
+		//var offsetY = Math.max((canvas.height - img.height * scale) / 2.0, 0);
+		offsetY = 0;
 		img.scale(scale);
 		img.left = offsetX;
 		img.top = offsetY;
