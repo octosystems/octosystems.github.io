@@ -284,8 +284,8 @@ function loadFile(file, img) {
 		    var data_url = e.target.result;
 		    img.src = data_url;
 		    //img.style.display = "block";
-		    data_url = imageToDataUri(img, 640, 800);
-		    img.src = data_url;
+		    // data_url = imageToDataUri(img, 640, 800);
+		    // img.src = data_url;
 		    img.style.display = "block";
 		    var detection_flags = getDetectionFlags();
 		    $("#octStatus").text("Please wait.. Processing the image");
