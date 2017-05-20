@@ -212,7 +212,7 @@ var getProduct = function () {
 		  success: getproductcallback
 		});
 	*/	
-	var producturl = constants.shopify_key + ":" + constants.shopify_password + "@https://octosystems.shopify.com/admin/products/" + meta.product.id +".json";
+	var producturl = "https://" + constants.shopify_key + ":" + constants.shopify_password + "@octosystems.shopify.com/admin/products/" + meta.product.id +".json";
 	$.getJSON(producturl,  getproductcallback); 
 	};
 getProduct();
