@@ -1,6 +1,6 @@
 var constants = {
             'api_key': 'd45fd466-51e2-4701-8da8-04351c872236',
-            'api_secret': '171e8465-f548-401d-b63b-caf0dc28df5f'
+            'api_secret': '171e8465-f548-401d-b63b-caf0dc28df5f',
 	    'shopify_key' : '3f4995e5b8621d60cc7fba8d6951a327',
 	    'shopify_password' : '289f0e2aaf1c839879c32cbde7f0812c'
         }
