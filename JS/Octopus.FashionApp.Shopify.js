@@ -180,6 +180,7 @@ var addbuttontryme= function() {
 	
 };
 
+
 var getproductcallback  =  function(result) {
 	window.octProduct = result; 
 	if (isproductnecklace() ||  isproductearring() ) {
@@ -256,6 +257,23 @@ function loadImage(imagedata) {
     }, 100);
 }
 
+function imageToDataUri(img, width, height) {
+
+    // create an off-screen canvas
+    var canvas = document.createElement('canvas'),
+    ctx = canvas.getContext('2d');
+
+    // set its dimension to target size
+    canvas.width = width;
+    canvas.height = height;
+
+    // draw source image into the off-screen canvas:
+    ctx.drawImage(img, 0, 0, width, height);
+
+    // encode image to data-uri with base64 version of compressed image
+    return canvas.toDataURL();
+}
+
 function loadFile(file, img) {
     setTimeout(function() {
 	var reader = new FileReader();
@@ -265,12 +283,14 @@ function loadFile(file, img) {
 		if (reader.readyState == FileReader.DONE) {
 		    var data_url = e.target.result;
 		    img.src = data_url;
+		    //img.style.display = "block";
+		    data_url = imageToDataUri(img, 640, 800);
+		    img.src = data_url;
 		    img.style.display = "block";
 		    var detection_flags = getDetectionFlags();
 		    $("#octStatus").text("Please wait.. Processing the image");
 		     $("#octStatus").css("display", "block");
 		     deleteCanvascontent();
-		    //img.style.display = "block";
 		    uploadImageFile(theFile.name, data_url, detection_flags);
 		}
 
