@@ -504,9 +504,9 @@ function drawImageOnFace(imgdata_url, canvas, w, h,x,y) {
 }
 
 function showImageTools(e) {
-    if (!$('#tooltipDialog').length) {
-	$('#myModal').append("<div id='tooltipDialog' style='position: absolute; top: 0; left: 0; color: lightgreen'><h1>" + e.tooltip + "</h1></div>");
-    }
+    // if (!$('#tooltipDialog').length) {
+	// $('#myModal').append("<div id='tooltipDialog' style='position: absolute; top: 0; left: 0; color: lightgreen'><h1>" + e.tooltip + "</h1></div>");
+    // }
     moveImageTools(e);
 }
 
