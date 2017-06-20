@@ -126,7 +126,8 @@ var consts = {
 var octImagelocation = "https://octosystems.github.io/images/";
 
 var addbuttontryme= function() {
-	var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
+	//var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
+	var divtags = document.getElementsByClassName("add");
 	if (divtags.length == 0) { return false; }
 
 	var modaldiv = document.createElement("div");
