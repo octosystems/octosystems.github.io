@@ -361,13 +361,13 @@ function uploadImageImpl(url, msg, image_filename, image) {
 		//error
 		doUpdateImage(image_uid, string_response, 0);
 
-		console.info(int_response);
-		console.info(string_response); 
+		console.log(int_response);
+		console.log(string_response); 
 	    }
 	},
 	error: function(jqXHR, textStatus, errorThrown) {
 	    //alert("Error in uploadImageImpl:"+textStatus);
-	    console.info(textStatus);
+	    console.log(textStatus);
 	}
     });
 }
@@ -692,12 +692,12 @@ function getImageInfo(image_uid) {
 		console.log("Calling doUpdateImage image uid is " + image_uid);
 		doUpdateImage(image_uid, string_response, 0);
 
-		console.info(int_response);
-		console.info(string_response);
+		console.log(int_response);
+		console.log(string_response);
 	    }
 	},
 	error: function(jqXHR, textStatus, errorThrown) {
-	    console.info(textStatus);
+	    console.log(textStatus);
 	}
     });
 }
@@ -868,13 +868,13 @@ function getFaceImage(face_uid) {
 		doUpdateFace(face_uid, data_url, x, y, width, height, angle, points, tags);
 	    } else {
 		//error
-		console.info(int_response);
+		console.log(int_response);
 		
-		console.info(string_response);
+		console.log(string_response);
 	    }
 	},
 	error: function(jqXHR, textStatus, errorThrown) {
-	    console.info(textStatus);
+	    console.log(textStatus);
 	}
     });
 }
