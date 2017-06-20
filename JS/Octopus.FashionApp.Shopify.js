@@ -159,7 +159,7 @@ var addbuttontryme= function() {
 	newbtn.setAttribute("id", "trymefashion");
 	newbtn.setAttribute("href", "javascript:void(0)");
 	newbtn.visible=true;
-	divtag.appendChild(newbtn);
+	divtag.parentElement.appendChild(newbtn);
 
 	// divtag2.appendChild(newbtn);
 	// divtag1.appendChild(divtag2);
