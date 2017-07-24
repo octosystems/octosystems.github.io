@@ -6,7 +6,8 @@ constants = {
 	    'shoipfy_url' : 'octosystems.myshopify.com'
 	    // 'shopify_key' : '55301a43d07be346b355d03cfe3f1b7e',
 	    // 'shopify_password' : '08df5abe64d4282f821c8cb97b269ff7',
-	    // 'shopify_url' : 'chic-mela.myshopify.com'        }
+	    // 'shopify_url' : 'chic-mela.myshopify.com'        
+	    }
 	
 window.Images = [];
 window.Faces = [];
