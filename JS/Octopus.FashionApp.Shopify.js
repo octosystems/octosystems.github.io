@@ -127,9 +127,6 @@ var consts = {
 var octImagelocation = "https://octosystems.github.io/images/";
 
 var addbuttontryme= function() {
-	//var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
-	var divtags = document.getElementsByClassName("add");
-	if (divtags.length == 0) { return false; }
 
 	var modaldiv = document.createElement("div");
 	var htmlstring = '<!-- Trigger/Open The Modal -->' +
@@ -149,7 +146,15 @@ var addbuttontryme= function() {
 	modaldiv.innerHTML = htmlstring;
 	document.body.append(modaldiv);
 
-	var divtag=divtags[0];
+	//var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
+	//var divtags = document.getElementsByClassName("add");
+
+	var divtags = document.getElementById("AddToCart");
+	if (divtags == null) { return false };
+	var divtag=divtags;
+	//if (divtags.length == 0) { return false; }
+	//var divtag=divtags[0];
+
 	var divtag1 = document.createElement("div");
 	divtag1.setAttribute("ng-app", "starter");
 	var divtag2 = document.createElement("div");
