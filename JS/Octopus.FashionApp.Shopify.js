@@ -135,7 +135,7 @@ var addbuttontryme= function() {
 	'  <!-- Modal content -->'+
 	'  <div class="fsnmodal-content">'+
 	'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
-	'    <span id=octPicturemessage style="display:block"><p>MAKE SURE YOUR FACE IS IN THE CENTRE AND IN THE BEST POSSIBLE LIGHT </p>' +
+	'    <span id="octPicturemessage" style="display:block"><p>MAKE SURE YOUR FACE IS IN THE CENTRE AND IN THE BEST POSSIBLE LIGHT </p>' +
 	'		<p>WORKS BEST IF YOU ARE WEARING AN OPEN TOP WHILE TAKING THE PICTURE</p></span>' + 
 	'    <label style="color:blue"> Click here to take a photo...' + 
 	'    <span id="octStatus" style="display:none" ></span>' +
@@ -302,6 +302,7 @@ function loadFile(file, img) {
 		    img.style.display = "block";
 		    var detection_flags = getDetectionFlags();
 		    $("#octStatus").text("Please wait.. Processing the image");
+		    $("#octPicturemessage").css("display", "none");
 		     $("#octStatus").css("display", "block");
 		     deleteCanvascontent();
 		    uploadImageFile(theFile.name, data_url, detection_flags);
