@@ -135,11 +135,11 @@ var addbuttontryme= function() {
 	'  <!-- Modal content -->'+
 	'  <div class="fsnmodal-content">'+
 	'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
-	'    <label style="color:blue"> Choose image...' + 
-	'    <input type="file" id="myImage" accept="image/*" style="top:-1000px;position:fixed"/></label>' +
-	'    <span id=octPicturemessage style="display:block">MAKE SURE YOUR FACE IS IN THE CENTRE AND IN THE BEST POSSIBLE LIGHT ' +
-	'		WORKS BEST IF YOU ARE WEARING AN OPEN TOP WHILE TAKING THE PICTURE</span>' + 
+	'    <span id=octPicturemessage style="display:block"><p>MAKE SURE YOUR FACE IS IN THE CENTRE AND IN THE BEST POSSIBLE LIGHT </p>' +
+	'		<p>WORKS BEST IF YOU ARE WEARING AN OPEN TOP WHILE TAKING THE PICTURE</p></span>' + 
+	'    <label style="color:blue"> Click here to take a photo...' + 
 	'    <span id="octStatus" style="display:none" ></span>' +
+	'    <input type="file" id="myImage" accept="image/*" style="top:-1000px;position:fixed"/></label>' +
 	'    <img src="about:blank" alt="" id="fsnPhoto" style="width:100%;height:auto; display:none" ></img></div>'+
 	'    <div id="canvasContainer" /></div>'+
 	  '</div>'+
