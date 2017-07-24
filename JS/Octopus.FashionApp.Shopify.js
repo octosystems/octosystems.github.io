@@ -3,7 +3,7 @@ constants = {
             'api_secret': '171e8465-f548-401d-b63b-caf0dc28df5f',
 	    'shopify_key' : '3f4995e5b8621d60cc7fba8d6951a327',
 	    'shopify_password' : '289f0e2aaf1c839879c32cbde7f0812c',
-	    'shoipfy_url' : 'octosystems.myshopify.com'
+	    'shopify_url' : 'octosystems.myshopify.com'
 	    // 'shopify_key' : '55301a43d07be346b355d03cfe3f1b7e',
 	    // 'shopify_password' : '08df5abe64d4282f821c8cb97b269ff7',
 	    // 'shopify_url' : 'chic-mela.myshopify.com'        
