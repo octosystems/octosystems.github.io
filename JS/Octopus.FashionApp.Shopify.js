@@ -135,7 +135,7 @@ var addbuttontryme= function() {
 	'  <!-- Modal content -->'+
 	'  <div class="fsnmodal-content">'+
 	'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
-	'    <div class="oval">' +
+	'    <div class="oval" id="ovaldiv">' +
 	'    <span id="octPicturemessage" class="instructiontext"><p>MAKE SURE <br>YOUR FACE <br>IS IN THE CENTRE <br>AND IN THE BEST <br>POSSIBLE LIGHT </p> ' +
 	'		<p>WORKS BEST <br>IF YOU ARE <br>WEARING AN <br>OPEN TOP WHILE <br>TAKING THE <br>PICTURE</p></span></div>' + 
 	'    <label style="color:blue"> Click here to take a photo...' + 
@@ -304,6 +304,7 @@ function loadFile(file, img) {
 		    var detection_flags = getDetectionFlags();
 		    $("#octStatus").text("Please wait.. Processing the image");
 		    $("#octPicturemessage").css("display", "none");
+		    $("#ovaldiv").css("display", "none");		    
 		     $("#octStatus").css("display", "block");
 		     deleteCanvascontent();
 		    uploadImageFile(theFile.name, data_url, detection_flags);
@@ -568,8 +569,8 @@ function updateModal() {
 	}
 	var e_canvas = document.createElement('canvas');
 	e_canvas.id = "imageCanvas";
-	e_canvas.width = 600;
-	e_canvas.height = 500;
+	e_canvas.width = "100%";
+	e_canvas.height = "100%";
 	e_canvas.style.position = "absolute";
 	_con[0].appendChild(e_canvas);
 
