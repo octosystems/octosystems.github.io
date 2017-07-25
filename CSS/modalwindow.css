@@ -1,6 +1,57 @@
 /* The Modal (background) */
 .fsnmodal {
+    display: none; /* Hidden by default *//* The Modal (background) */
+.fsnmodal {
     display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 400px; /* Full width */
+    height: 600px; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#grad1 {
+    height: 200px;
+    background: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(lightgray, gray,lightgray); /* Standard syntax (must be last) */
+}
+
+/* Modal Content/Box */
+.fsnmodal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%; /* Could be more or less, depending on screen size */
+    height: 80%;
+    background: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow, green); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(lightgray, gray,lightgray); /* Standard syntax (must be last) */
+
+    
+    }
+
+/* The Close Button */
+.fsnclose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.fsnclose:hover,
+.fsnclose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
