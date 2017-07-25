@@ -12,13 +12,7 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#grad1 {
-    height: 200px;
-    background: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(red, yellow, green); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(lightgray, gray,lightgray); /* Standard syntax (must be last) */
-}
+
 
 /* Modal Content/Box */
 .fsnmodal-content {
