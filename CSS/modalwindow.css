@@ -14,16 +14,16 @@
 .oval {
             width: 100%;
             height: 80%;
-            background: #a84909;
+	    border:2px solid dotted;
             moz-border-radius: 80px / 40px;
             webkit-border-radius: 80px / 40px;
             border-radius: 50%;
 	    display:table;
+	    vertical-align:middle;
 	    text-align:center;
             }
 .instructiontext {
 	display:table-cell;
-	vertical-align:middle
 }
 
 /* Modal Content/Box */
