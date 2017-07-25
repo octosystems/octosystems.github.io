@@ -12,8 +12,6 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-
-
 /* Modal Content/Box */
 .fsnmodal-content {
     background-color: #fefefe;
@@ -22,8 +20,7 @@
     border: 1px solid #888;
     width: 100%; /* Could be more or less, depending on screen size */
     height: 80%;
-
-
+    background: linear-gradient(lightgray, gray,lightgray); /* Standard syntax (must be last) */
     
     }
 
