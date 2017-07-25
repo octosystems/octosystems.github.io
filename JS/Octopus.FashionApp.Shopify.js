@@ -570,14 +570,10 @@ function updateModal() {
 	
 	_con[0].style.width="100%";
 	_con[0].style.height="100%";
-	_con[0].style.position="absolute";
 	
 	
 	var e_canvas = document.createElement('canvas');
 	e_canvas.id = "imageCanvas";
-	e_canvas.width = "100%";
-	e_canvas.height = "100%";
-	e_canvas.style.position = "absolute";
 	_con[0].appendChild(e_canvas);
 
 	var canvas = this.__canvas = new fabric.Canvas('imageCanvas', {
