@@ -567,6 +567,12 @@ function updateModal() {
 	while (_con[0].firstChild) {
 	    _con[0].removeChild(_con[0].firstChild);
 	}
+	
+	_con[0].style.width="100%";
+	_con[0].style.height="100%";
+	_con[0].style.position="absolute";
+	
+	
 	var e_canvas = document.createElement('canvas');
 	e_canvas.id = "imageCanvas";
 	e_canvas.width = "100%";
