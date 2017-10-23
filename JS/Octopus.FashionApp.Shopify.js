@@ -150,13 +150,13 @@ var addbuttontryme= function() {
 	document.body.append(modaldiv);
 
 	//var divtags = document.getElementsByClassName("product-form__item product-form__item--submit");
-	//var divtags = document.getElementsByClassName("add");
-
-	var divtags = document.getElementById("AddToCart");
+	var divtags = document.getElementsByClassName("add");
 	if (divtags == null) { return false };
-	var divtag=divtags;
-	//if (divtags.length == 0) { return false; }
-	//var divtag=divtags[0];
+	if (divtags.length == 0) { return false; }
+	var divtag=divtags[0];
+
+	//var divtags = document.getElementById("AddToCart");
+	//var divtag=divtags;
 
 	var divtag1 = document.createElement("div");
 	divtag1.setAttribute("ng-app", "starter");
