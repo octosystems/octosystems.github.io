@@ -204,7 +204,13 @@ var addbuttontryme= function() {
 	    window.modal_on = false;
 	    modal.style.display = "none";
 	};
-	
+	var msgSpan = document.getElementById("octPicturemessage");
+	msgSpan.onclick = function() {
+		var fileelem= document.getElementById("myImage");
+		if (fileelm) { 
+			fileelem.click();
+		};
+	};
 };
 
 
