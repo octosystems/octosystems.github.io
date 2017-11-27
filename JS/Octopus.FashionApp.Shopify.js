@@ -179,6 +179,7 @@ var addbuttontryme= function() {
 	//newbtn.setAttribute("onclick", "javascript:return false;");
 	newbtn.visible=true;
 	var newdiv = document.createElement("div");
+	newdiv.style.width="100%";
 	newdiv.appendChild(newbtn);
 	divtag.parentElement.insertBefore(newdiv, divtag.parentElement.firstChild);
 
