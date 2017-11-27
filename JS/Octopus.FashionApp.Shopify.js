@@ -136,8 +136,10 @@ var addbuttontryme= function() {
 	'  <div class="fsnmodal-content">'+
 	'    <span class="fsnclose" id="spanfsnclose">&times;</span><div>'+
 	'    <div class="oval" id="ovaldiv">' +
-	'    <span id="octPicturemessage" class="instructiontext"><p>MAKE SURE <br>YOUR FACE <br>IS IN THE CENTRE <br>AND IN THE BEST <br>POSSIBLE LIGHT </p> ' +
-	'		<p>WORKS BEST <br>IF YOU ARE <br>WEARING AN <br>OPEN TOP WHILE <br>TAKING THE <br>PICTURE</p></span></div>' + 
+		'    <span id="octPicturemessage" class="instructiontext">' + 
+	'<p>MAKE SURE <br>YOUR FACE <br>IS IN THE CENTRE <br>AND IN THE BEST <br>POSSIBLE LIGHT </p> ' +
+	'<p> <img src="https://cdn.shopify.com/s/files/1/1990/5823/files/camera1.jpg?9564734993377185766">' +
+	'<p>WORKS BEST <br>IF YOU ARE <br>WEARING AN <br>OPEN TOP WHILE <br>TAKING THE <br>PICTURE</p></span></div>' + 
 	'    <label style="color:blue"> Click here to take a photo...' + 
 	'    <span id="octStatus" style="display:none" ></span>' +
 	'    <input type="file" id="myImage" accept="image/*" style="top:-1000px;position:fixed"/></label>' +
