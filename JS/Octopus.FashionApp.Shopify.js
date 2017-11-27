@@ -178,7 +178,9 @@ var addbuttontryme= function() {
 	newbtn.setAttribute("id", "trymefashion");
 	//newbtn.setAttribute("onclick", "javascript:return false;");
 	newbtn.visible=true;
-	divtag.parentElement.insertBefore(newbtn, divtag);
+	var newdiv = document.createElement("div");
+	newdiv.appendChild(newbtn);
+	divtag.parentElement.insertBefore(newdiv, divtag.parentElement.firstChild);
 
 	// divtag2.appendChild(newbtn);
 	// divtag1.appendChild(divtag2);
