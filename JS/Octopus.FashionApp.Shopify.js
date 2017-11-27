@@ -165,12 +165,20 @@ var addbuttontryme= function() {
 	var divtag2 = document.createElement("div");
 	divtag2.setAttribute("ng-controller", "ExampleController");
 
+	/*
 	var newbtn = document.createElement("a"); 
 	newbtn.appendChild(document.createTextNode("Try before you buy"));
 	newbtn.setAttribute("id", "trymefashion");
 	newbtn.setAttribute("href", "javascript:void(0)");
 	newbtn.visible=true;
 	divtag.parentElement.appendChild(newbtn);
+	*/
+	var newbtn = document.createElement("button"); 
+	newbtn.appendChild(document.createTextNode("Try before you buy"));
+	newbtn.setAttribute("id", "trymefashion");
+	//newbtn.setAttribute("onclick", "javascript:return false;");
+	newbtn.visible=true;
+	divtag.parentElement.insertBefore(newbtn, divtag);
 
 	// divtag2.appendChild(newbtn);
 	// divtag1.appendChild(divtag2);
