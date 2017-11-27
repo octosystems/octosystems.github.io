@@ -260,7 +260,8 @@ function assignFileSelect() {
 
 function serviceUri()
 {
-   return (window.location.protocol != "https:")?"http://www.betafaceapi.com/service.svc":"https://www.betafaceapi.com/service_ssl.svc";
+   //return (window.location.protocol != "https:")?"http://www.betafaceapi.com/service.svc":"https://www.betafaceapi.com/service_ssl.svc";
+   return (window.location.protocol != "https:")?"http://149.202.120.157/service.svc":"https://149.202.120.157/service_ssl.svc";
 }
 
 function loadImage(imagedata) {
