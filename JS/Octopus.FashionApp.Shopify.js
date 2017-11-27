@@ -180,6 +180,7 @@ var addbuttontryme= function() {
 	newbtn.visible=true;
 	var newdiv = document.createElement("div");
 	newdiv.style.width="100%";
+	newbtn.style.width="100%";
 	newdiv.appendChild(newbtn);
 	divtag.parentElement.insertBefore(newdiv, divtag.parentElement.firstChild);
 
