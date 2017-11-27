@@ -207,7 +207,7 @@ var addbuttontryme= function() {
 	var msgSpan = document.getElementById("octPicturemessage");
 	msgSpan.onclick = function() {
 		var fileelem= document.getElementById("myImage");
-		if (fileelm) { 
+		if (fileelem) { 
 			fileelem.click();
 		};
 	};
